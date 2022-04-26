@@ -1,4 +1,4 @@
-package pl.uczen.polimorfizmdziedziczenie;
+package pl.uczen.polimorfizmstatyczny;
 
 public class Elephant extends Animal {
 
