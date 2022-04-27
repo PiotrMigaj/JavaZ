@@ -14,14 +14,26 @@ public class Main {
         animals.add(new Giraffe("Basia"));
         animals.add(new Shark("Tomek"));
 
-        animals.forEach(animal -> animal.eat(3));
+//        animals.forEach(animal -> animal.eat(3));
 
-        Generyk<String> stringGeneryk = new Generyk<>();
-        stringGeneryk.setT("Jestem generykiem");
-        System.out.println(stringGeneryk.getT());
-        Generyk<Integer> integerGenery = new Generyk<>();
-        integerGenery.setT(100);
-        System.out.println(integerGenery.getT());
+//        Generyk<String> stringGeneryk = new Generyk<>();
+//        stringGeneryk.setT("Jestem generykiem");
+//        System.out.println(stringGeneryk.getT());
+//        Generyk<Integer> integerGenery = new Generyk<>();
+//        integerGenery.setT(100);
+//        System.out.println(integerGenery.getT());
+
+        FavouriteNumber<Integer> numberPrinter = new FavouriteNumber<Integer>() {
+            @Override
+            public void printFavouriteNumber(Integer integer) {
+                System.out.println("Mój ulubiony to: "+integer);
+            }
+        };
+
+        numberPrinter.printFavouriteNumber(20);
+
+        FavouriteNumber<Short> nicePrinter = new NicePrinter<>();
+        nicePrinter.printFavouriteNumber((short) 4);
 
 
 
