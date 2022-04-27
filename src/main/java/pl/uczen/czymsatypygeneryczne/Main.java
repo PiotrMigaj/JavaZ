@@ -32,8 +32,11 @@ public class Main {
 
         numberPrinter.printFavouriteNumber(20);
 
-        FavouriteNumber<Short> nicePrinter = new NicePrinter<>();
+        NicePrinter nicePrinter = new NicePrinter();
         nicePrinter.printFavouriteNumber((short) 4);
+
+        System.out.println(nicePrinter.<Animal>isDifferent(animals.get(0),animals.get(3)));
+
 
 
 
