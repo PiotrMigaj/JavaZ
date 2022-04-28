@@ -16,29 +16,55 @@ public class Main {
 
 //        animals.forEach(animal -> animal.eat(3));
 
-//        Generyk<String> stringGeneryk = new Generyk<>();
-//        stringGeneryk.setT("Jestem generykiem");
-//        System.out.println(stringGeneryk.getT());
-//        Generyk<Integer> integerGenery = new Generyk<>();
-//        integerGenery.setT(100);
-//        System.out.println(integerGenery.getT());
+        Enclosure<Animal> enclosureElephant = new Enclosure<>();
+        enclosureElephant.addT(new Elephant("Benio"));
+        System.out.println(enclosureElephant.getT());
 
-        FavouriteNumber<Integer> numberPrinter = new FavouriteNumber<Integer>() {
-            @Override
-            public void printFavouriteNumber(Integer integer) {
-                System.out.println("Mój ulubiony to: "+integer);
-            }
-        };
+        Enclosure<Animal> enclosure2Elephant = new Enclosure<>();
+        enclosure2Elephant.addT(new Elephant("Benio"));
+        enclosure2Elephant.addT(new Elephant("Jasio"));
+        enclosure2Elephant.addT(new Elephant("Tomek"));
+        System.out.println(enclosure2Elephant.getT());
 
-        numberPrinter.printFavouriteNumber(20);
+        Enclosure<Giraffe> enclosureGiraffe = new Enclosure<>();
+        enclosureGiraffe.addT(new Giraffe("Kasia"));
+        System.out.println(enclosureGiraffe.getT());
 
-        NicePrinter nicePrinter = new NicePrinter();
-        nicePrinter.printFavouriteNumber((short) 4);
+        compare(enclosureElephant, enclosure2Elephant);
 
-        System.out.println(nicePrinter.<Animal>isDifferent(animals.get(0),animals.get(3)));
+//        FavouriteNumber<Integer> numberPrinter = new FavouriteNumber<Integer>() {
+//            @Override
+//            public void printFavouriteNumber(Integer integer) {
+//                System.out.println("Mój ulubiony to: "+integer);
+//            }
+//        };
+//
+//        numberPrinter.printFavouriteNumber(20);
+//
+//        NicePrinter nicePrinter = new NicePrinter();
+//        nicePrinter.printFavouriteNumber((short) 4);
+//
+//        System.out.println(nicePrinter.<Animal>isDifferent(animals.get(0),animals.get(3)));
 
+        Object o = new Object();
+
+        String s = "text";
+
+        o=s;
+
+        String k = (String)o;
+
+        Enclosure<Elephant> slonie = new Enclosure<>();
+        Enclosure<Animal> zwierzeta = new Enclosure<>();
+
+        o = slonie;
 
 
 
     }
+
+    static<T extends Animal> int compare(Enclosure<T> t1, Enclosure<T> t2){
+        return t1.getT().size()-t2.getT().size();
+    }
+
 }
