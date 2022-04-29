@@ -66,7 +66,7 @@ public class Main {
 
         compare(enclosureElephant, enclosure2Elephant);
 
-        List<Integer>[] integerList = new List<Integer>[8];
+       // List<Integer>[] integerList = new List<Integer>[8];
 
 //        FavouriteNumber<Integer> numberPrinter = new FavouriteNumber<Integer>() {
 //            @Override
