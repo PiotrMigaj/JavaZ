@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Main {
 
-    public static int countElephant(List<? super Elephant> le){
+    public static int countElephant(List<?> le){
         int counter = 0;
         for (Object a:le) {
             if (a instanceof Elephant){
@@ -40,6 +40,16 @@ public class Main {
 
 //        animals.forEach(animal -> animal.eat(3));
 
+        ModernEnclosure<Giraffe,Elephant> me = new ModernEnclosure<>();
+        Enclosure<Giraffe> e = me;
+
+        e.addT(new Giraffe("Imie"));
+
+        Giraffe g = (e.getT().get(0));
+
+
+
+
         Enclosure<Animal> enclosureElephant = new Enclosure<>();
         enclosureElephant.addT(new Elephant("Benio"));
         System.out.println(enclosureElephant.getT());
@@ -55,6 +65,8 @@ public class Main {
         System.out.println(enclosureGiraffe.getT());
 
         compare(enclosureElephant, enclosure2Elephant);
+
+        List<Integer>[] integerList = new List<Integer>[8];
 
 //        FavouriteNumber<Integer> numberPrinter = new FavouriteNumber<Integer>() {
 //            @Override
@@ -81,12 +93,26 @@ public class Main {
         Enclosure<Elephant> slonie = new Enclosure<>();
         Enclosure<Animal> zwierzeta = new Enclosure<>();
 
+
+
         o = slonie;
 
-        Enclosure<Elephant> wybiegiSloni = new Enclosure<>();
-        Enclosure<Elephant> wybiegiZwierzat = new ModernEnclosure<>();
+        Enclosure<? extends Elephant> slonieOK = new Enclosure<>();
+        Enclosure<? extends Animal> zwierzetaOk = new Enclosure<>();
 
-        wybiegiSloni = wybiegiZwierzat;
+        zwierzetaOk = slonieOK;
+
+        slonieOK.getT();
+        zwierzetaOk.getT();
+
+        List<Long> longs = new ArrayList<>();
+        longs.add(12L);
+
+       // List<Number> numbers = longs;
+
+
+
+        o = zwierzeta;
 
 
 
