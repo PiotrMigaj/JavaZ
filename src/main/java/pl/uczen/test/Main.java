@@ -8,7 +8,16 @@ public class Main {
 
         Employee employee = new Employee("Piotr",32);
 
-        employee.saySth();
+
+
+        Human2 human2 = new Human("Piotr");
+
+        human2.saySth();
+
+        Human2 human21 = new Employee("Piotr",32);
+
+        human21.saySth();
+
 
     }
 

@@ -1,6 +1,6 @@
 package pl.uczen.test;
 
-public class Employee extends Human implements Human2{
+public class Employee extends Human{
 
     private int age;
 
