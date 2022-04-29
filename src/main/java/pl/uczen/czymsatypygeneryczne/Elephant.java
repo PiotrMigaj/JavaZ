@@ -13,4 +13,8 @@ public class Elephant extends Animal {
     public void eat() {
         System.out.println(TYPE_NAME_DEFAULT+" "+this.name+" pije "+this.meal);
     }
+
+    public void giveMeLuck(){
+        System.out.println("Elephant wish you luck.");
+    }
 }

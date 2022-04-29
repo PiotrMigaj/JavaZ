@@ -4,6 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
+
+    public static int countElephant(List<? super Elephant> le){
+        int counter = 0;
+        for (Object a:le) {
+            if (a instanceof Elephant){
+                ((Elephant)a).giveMeLuck();
+                counter++;
+            }
+        }
+        return counter;
+    }
+
     public static void main(String[] args) {
 
         Feedable hungryGuy = new Elephant("Piotr");
@@ -13,6 +25,18 @@ public class Main {
         animals.add(new Elephant("Piotr"));
         animals.add(new Giraffe("Basia"));
         animals.add(new Shark("Tomek"));
+
+        List<Elephant> elephants = new ArrayList<>();
+        elephants.add(new Elephant("Jacek"));
+        elephants.add(new Elephant("Kamil"));
+
+        List<Giraffe> giraffes = new ArrayList<>();
+        giraffes.add(new Giraffe("Basia"));
+        giraffes.add(new Giraffe("Ania"));
+
+        System.out.println(countElephant(animals));
+        System.out.println(countElephant(elephants));
+        //System.out.println(countElephant(giraffes));
 
 //        animals.forEach(animal -> animal.eat(3));
 
@@ -58,6 +82,12 @@ public class Main {
         Enclosure<Animal> zwierzeta = new Enclosure<>();
 
         o = slonie;
+
+        Enclosure<Elephant> wybiegiSloni = new Enclosure<>();
+        Enclosure<Elephant> wybiegiZwierzat = new ModernEnclosure<>();
+
+        wybiegiSloni = wybiegiZwierzat;
+
 
 
 
